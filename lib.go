@@ -40,19 +40,19 @@ func (r Result[T]) Err(err string) Result[T] {
 	return r
 }
 
-func (r *Result[T]) IsOk() bool {
+func (r Result[T]) IsOk() bool {
 	return r.err == nil
 }
 
-func (r *Result[T]) IsErr() bool {
+func (r Result[T]) IsErr() bool {
 	return r.err != nil
 }
 
-func (r *Result[T]) Error() error {
+func (r Result[T]) Error() error {
 	return r.err
 }
 
-func (o *Result[T]) Unwrap() T {
+func (o Result[T]) Unwrap() T {
 	if o.IsErr() {
 		panic(o.err)
 	}
