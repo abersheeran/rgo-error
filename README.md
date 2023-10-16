@@ -35,7 +35,7 @@ func use_result() Result[string] {
 
 You can use `Ok` and `Err` in your function replace `AsResult`
 
-```python
+```go
 func ok_or_err() Result[string] {
     return Ok[string]("hello world")
     // return Err[string](error)
